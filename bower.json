@@ -1,0 +1,22 @@
+{
+  "name": "js.geo-distance",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nwhite89/js.geo-distance",
+  "authors": [
+    "Nick White <nickswhite89@gmail.com>"
+  ],
+  "description": "Changes Lng/Lat to human readable such as km and miles",
+  "keywords": [
+    "geodistance",
+    "geo-distance",
+    "distance"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
