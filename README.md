@@ -24,5 +24,6 @@ var from = {
 };
 
 
-geoDistance.run(to, from, 'feet', 2);
+geoDistance.run(to, from, 'feet', 2, 'asc');
+geoDistance.init(y, x, 'asc', 'feet');
 ```
