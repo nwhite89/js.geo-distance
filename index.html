@@ -7,24 +7,32 @@
 </head>
 <body>
     <script>
-        var to = [
-        {
-            lat: -22.853840,
-            lng: 19.882812
-        },
-        {
-            lat: 44.514772,
-            lng: 20.058594
-        }
+        var x = [
+            {
+                lat: 44.514772,
+                lng: 20.058594
+            },
+            {
+                lat: -22.853840,
+                lng: 19.882812
+            },
+            {
+                lat: 36.206607,
+                lng: -85.253906
+            },
+            {
+                lat: 36.201326,
+                lng: -84.788361
+            }
         ];
-        var from = {
+        var y = {
             lat: 58.114637,
             lng: -4.375000
         };
 
-
-
-        console.log(geoDistance.init(from, to));
+        // console.log(geoDistance(y, x, 'feet'));
+        // console.log(geoDistance(y, x, 'asc'));
+        // console.log(geoDistance(y, x, 'desc', 'miles'));
 </script>
 </body>
 </html>

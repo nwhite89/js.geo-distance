@@ -32,6 +32,41 @@
      */
     window.geoDistance = {
         /**
+         * Contains the radius of earth based on different distances such as
+         * miles or kilometers (km)
+         * @memberOf geoDistance
+         * @type {Object}
+         */
+        distances : {
+            'yards': 6967410,
+            'km': 6371,
+            'miles': 3959,
+            'metres': 6371000,
+            'feet': 20902231
+        },
+        /**
+         * Sort the to object in ascending or descending order if called
+         * @param  {object} toObj      [Going to Lng, Lat and distance]
+         * @param  {number} toObj.lat  [Latitude]
+         * @param  {number} toObj.lng  [Longitutde]
+         * @param  {number} toObj.distance [Distance]
+         * @param  {string} orderBy [Ascending or Descending]
+         * @return {object}         [Object to, in order by distance]
+         */
+        distanceSort : function (toObj, orderBy) {
+            toObj.sort(function (a, b) {
+                var a1= a.distance, b1= b.distance;
+                if( a1 == b1) { return 0; }
+                return a1> b1? 1: -1;
+            });
+
+            if (orderBy != 'asc') {
+                toObj.reverse();
+            }
+
+            return toObj;
+        },
+        /**
          * Function to retrieve the difference in a human readable length such
          * as km between two difference longitude and latitude points
          * @function init
@@ -46,18 +81,20 @@
          * @param  {int} [decimals=2] [To which amount of decimals to return]
          * @return {Object}          [Returns the to object with the distance]
          */
-        init : function (from, to, length, decimals) {
+        init : function (from, to, orderBy, length, decimals) {
             decimals = decimals || 2;
             length = length || 'km';
 
-            var earthRadius = this.distances[length],
-                fromLng = parseFloat(from.lng),
-                fromLat = parseFloat(from.lat);
+            var fromObj = from,
+                toObj = to.slice(0),
+                earthRadius = this.distances[length],
+                fromLng = parseFloat(fromObj.lng),
+                fromLat = parseFloat(fromObj.lat);
 
             fromLat = fromLat.toRad();
 
             for (var i = to.length - 1; i >= 0; i--) {
-                var lngLat = to[i],
+                var lngLat = toObj[i],
                     toLat = parseFloat(lngLat.lat),
                     toLng = parseFloat(lngLat.lng),
                     dLat = (fromLat - toLat).toRad(),
@@ -73,10 +110,14 @@
 
                 data['toLat'] = toLat.toRad();
 
-                to[i]['distance'] = this.retrieveDistance(data);
+                toObj[i]['distance'] = this.retrieveDistance(data);
             }
 
-            return to;
+            if (orderBy) {
+                toObj = this.distanceSort(toObj, orderBy);
+            }
+
+            return toObj;
         },
         /**
          * Function which calculates a single distance between two points
@@ -110,19 +151,6 @@
                     Math.pow(10, decimals)) * 1000;
 
             return d;
-        },
-        /**
-         * Contains the radius of earth based on different distances such as
-         * miles or kilometers (km)
-         * @memberOf geoDistance
-         * @type {Object}
-         */
-        distances : {
-            'km': 6371,
-            'miles': 3959,
-            'metres': 6371000,
-            'yards': 6967410,
-            'feet': 20902231
         }
     };
 
