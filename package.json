@@ -1,8 +1,8 @@
 {
   "name": "js.geo-distance",
-  "version": "0.1.0",
-  "description": "A Node.js module which takes 2 Lat+Lng (Geolocation) points and returns the distance between the two points in Meters",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Changes Lng/Lat to human readable such as km and miles",
+  "main": "src/distance.js",
   "scripts": {
     "test": "grunt test"
   },
