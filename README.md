@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/nwhite89/js.geo-distance.svg?branch=master)](https://travis-ci.org/nwhite89/js.geo-distance)
+[![devDependency Status](https://david-dm.org/nwhite89/js.geo-distance/dev-status.svg)](https://david-dm.org/nwhite89/js.geo-distance#info=devDependencies)
+
 #js.geo-distance
 
 ####About JS Geo Distance

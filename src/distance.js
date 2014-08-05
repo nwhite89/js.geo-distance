@@ -37,7 +37,7 @@
          * @memberOf geoDistance
          * @type {Object}
          */
-        distances : {
+        distances: {
             'yards': 6967410,
             'km': 6371,
             'miles': 3959,
@@ -53,11 +53,11 @@
          * @param  {string} orderBy [Ascending or Descending]
          * @return {object}         [Object to, in order by distance]
          */
-        distanceSort : function (toObj, orderBy) {
+        distanceSort: function (toObj, orderBy) {
             toObj.sort(function (a, b) {
-                var a1= a.distance, b1= b.distance;
-                if( a1 == b1) { return 0; }
-                return a1> b1? 1: -1;
+                var a1 = a.distance, b1 = b.distance;
+                if (a1 == b1) { return 0; }
+                return a1> b1 ? 1 : -1;
             });
 
             if (orderBy != 'asc') {
@@ -71,17 +71,17 @@
          * as km between two difference longitude and latitude points
          * @function init
          * @memberOf geoDistance
+         *
          * @param  {object} from    [Contains the main starting lng/lat point]
          * @param  {number} from.lat [Latitude]
          * @param  {number} from.lng [Longitutde]
          * @param  {array<object>}  to [Can contain multiple end lng/lat points]
          * @param  {number} to.lat [Latitude]
          * @param  {number} to.lng [Longitude]
-         * @param  {string} [length=km]   [The human readable length such as KM]
-         * @param  {int} [decimals=2] [To which amount of decimals to return]
+         *
          * @return {Object}          [Returns the to object with the distance]
          */
-        init : function (from, to, orderBy, length, decimals) {
+        init: function (from, to, orderBy, length, decimals) {
             decimals = decimals || 2;
             length = length || 'km';
 
@@ -108,9 +108,9 @@
                         fromLat: fromLat
                     };
 
-                data['toLat'] = toLat.toRad();
+                data.toLat = toLat.toRad();
 
-                toObj[i]['distance'] = this.retrieveDistance(data);
+                toObj[i].distance = this.retrieveDistance(data);
             }
 
             if (orderBy) {
@@ -133,7 +133,7 @@
          * @param  {number} data.fromLat [From Latitude radian]
          * @return {number}      [Returns the caculated distance]
          */
-        retrieveDistance : function (data) {
+        retrieveDistance: function (data) {
             var earthRadius = data.earthRadius,
                 decimals = data.decimals,
                 dLat = data.dLat,
