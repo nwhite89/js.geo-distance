@@ -7,7 +7,7 @@
 
 ```js
 bower install js.geo-distance
-``
+```
 
 Then adding to your web page
 
