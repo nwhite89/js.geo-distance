@@ -3,12 +3,23 @@
 
 #js.geo-distance
 
-####About JS Geo Distance
+## Install
+
+```js
+bower install js.geo-distance
+``
+
+Then adding to your web page
+
+```html
+<script type="text/javascript" src="src/distance.js"></script>
+```
+
+## About JS Geo Distance
 
 This plugin was build based on Chris Veness' JavaScript plugin found www.movable-type.co.uk/scripts/latlong.html
 
-Using
------
+### Using
 
 ```js
 var to = [
@@ -27,6 +38,5 @@ var from = {
 };
 
 
-geoDistance.run(to, from, 'feet', 2, 'asc');
-geoDistance.init(y, x, 'asc', 'feet');
+geoDistance.init(from, to, 'asc', 'feet', 2);
 ```
