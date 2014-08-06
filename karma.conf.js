@@ -13,8 +13,16 @@ module.exports = function (config) {
             'jasmine'
         ],
         reporters: [
-            'progress'
+            'progress',
+            'coverage'
         ],
+        preprocessors: {
+            './src/distance.js': 'coverage'
+        },
+        coverageReporter: {
+            type: 'lcov',
+            dir: 'coverage/'
+        },
         port: 9876,
         runnerPort: 9100,
         autoWatch: true,

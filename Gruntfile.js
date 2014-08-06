@@ -1,5 +1,10 @@
 module.exports = function (grunt) {
     grunt.initConfig({
+        'coveralls': {
+            'options': {
+                'coverage_dir': 'coverage'
+            }
+        },
         'karma': {
             'unit': {
                 'configFile': 'karma.conf.js'
@@ -24,7 +29,8 @@ module.exports = function (grunt) {
     // Registers a task to test the task
     grunt.registerTask('test', [
         'jshint',
-        'jscs'
+        'jscs',
+        'karma'
     ]);
 
     grunt.registerTask('default', ['test']);
