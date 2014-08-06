@@ -3,7 +3,7 @@
 
 #js.geo-distance
 
-####About JS Geo Distance
+## About JS Geo Distance
 
 This plugin was build based on Chris Veness' JavaScript plugin found www.movable-type.co.uk/scripts/latlong.html
 
@@ -27,6 +27,5 @@ var from = {
 };
 
 
-geoDistance.run(to, from, 'feet', 2, 'asc');
-geoDistance.init(y, x, 'asc', 'feet');
+geoDistance.init(from, to, 'asc', 'feet', 2);
 ```
