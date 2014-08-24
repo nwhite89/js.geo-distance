@@ -4,7 +4,7 @@
   "description": "Changes Lng/Lat to human readable such as km and miles",
   "main": "src/distance.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt travisBuild"
   },
   "repository": {
     "type": "git",
