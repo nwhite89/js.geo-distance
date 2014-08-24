@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/nwhite89/js.geo-distance.svg?branch=master)](https://travis-ci.org/nwhite89/js.geo-distance)
 [![devDependency Status](https://david-dm.org/nwhite89/js.geo-distance/dev-status.svg)](https://david-dm.org/nwhite89/js.geo-distance#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/nwhite89/js.geo-distance.svg)](https://coveralls.io/r/nwhite89/js.geo-distance?branch=master)
 
 #js.geo-distance
 
